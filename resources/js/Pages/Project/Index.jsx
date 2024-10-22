@@ -19,7 +19,6 @@ const Index = ({auth, projects, queryParams = null}) => {
     }
 
     const onKeyPress = (name, e) =>{
-        e.preventDefault()
         if(e.key !== 'Enter') return
         searchFieldChanged(name, e.target.value)
     }
@@ -108,8 +107,8 @@ const Index = ({auth, projects, queryParams = null}) => {
                                                 className="w-full"
                                                 defaultValue={queryParams.name}
                                                 placeholder="Nombre del Proyecto"
-                                                onBlur={e=>searchFieldChanged('name', e.target.value)}
-                                                onKeyPress={e=>onKeyPress('name', e)}
+                                                onBlur={(e)=>searchFieldChanged('name', e.target.value)}
+                                                onKeyPress={(e)=>onKeyPress('name', e)}
                                             />
                                         </th>
                                         <th className='px-3 py-3'>
