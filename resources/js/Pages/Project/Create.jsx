@@ -39,6 +39,7 @@ const Create = ({auth}) => {
                         <form
                             onSubmit={onSubmit}
                             className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
+                            encType='multipart/form-data'
                         >
                             <div>
                                 <InputLabel
@@ -52,7 +53,7 @@ const Create = ({auth}) => {
                                 className="mt-1 block w-full"
                                 onChange={(e) => setData("image", e.target.files[0])}
                                 />
-                                {console.log(e.target.files[0])}
+                                {console.log(data)}
                                 <InputError message={errors.image} className="mt-2" />
                             </div>
                             <div className="mt-4">
